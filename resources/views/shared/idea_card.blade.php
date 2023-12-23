@@ -9,7 +9,17 @@
                         </a></h5>
                 </div>
             </div>
-            <div class="btn btn-danger">X</div>
+            <div>
+                <form action="{{route('ideas.destroy',$idea->id)}}" method="post">
+                    @csrf
+                    @method('delete')
+                <a href="{{ route('ideas.show',$idea->id)}}"class="btn btn-primary">View</a>
+                <a href="{{ route('ideas.edit',$idea->id)}}"class="ms-2 btn btn-success">Edit</a>
+                
+                <button class="ms-2 btn btn-danger">X</button>
+                </form>
+
+            </div>
         </div>
 
     </div>
